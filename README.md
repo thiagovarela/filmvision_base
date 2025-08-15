@@ -1,18 +1,21 @@
 # Filmvision
 
-To start your Phoenix server:
+This is a Phoenix application that serves as a base for some apps.
 
-* Run `mix setup` to install and setup dependencies
-* Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+The name is filmvision because I started a project with this name and decided to leave the base here, and it is quite annoying to have some generators/ignite/cookiecutter for it, so I'll leve as sample code.
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+What we have is a bare phoenix application with some extras:
+I used the `phx.gen.auth` generator and added organizations and projects as part of the scope.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+Also replaced daisyui with basecoat and built some layouts:
 
-## Learn more
+- site: marketing site
+- auth: for authentication views
+- app: a sidebar/offcanvas for the authed user.
 
-* Official website: https://www.phoenixframework.org/
-* Guides: https://hexdocs.pm/phoenix/overview.html
-* Docs: https://hexdocs.pm/phoenix
-* Forum: https://elixirforum.com/c/phoenix-forum
-* Source: https://github.com/phoenixframework/phoenix
+## Next steps
+- configure google log in
+- configure email
+- production release
+- where to put the organization/project entrypoint for crud
+- background jobs
