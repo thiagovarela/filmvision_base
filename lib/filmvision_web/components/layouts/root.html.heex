@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content={get_csrf_token()} />
+    <.live_title default="Film Vision">
+      {assigns[:page_title]}
+    </.live_title>
+    <link phx-track-static rel="stylesheet" href={~p"/assets/css/app.css"} />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script defer phx-track-static type="text/javascript" src={~p"/assets/js/app.js"}>
+    </script>
+    <script>
+      (() => {
+          try {
+            const stored = localStorage.getItem('themeMode');
+            if (stored ? stored === 'dark'
+                        : matchMedia('(prefers-color-scheme: dark)').matches) {
+              document.documentElement.classList.add('dark');
+            }
+          } catch (_) {}
+
+          const apply = dark => {
+            document.documentElement.classList.toggle('dark', dark);
+            try { localStorage.setItem('themeMode', dark ? 'dark' : 'light'); } catch (_) {}
+          };
+
+          document.addEventListener('basecoat:theme', (event) => {
+            const mode = event.detail?.mode;
+            apply(mode === 'dark' ? true
+                  : mode === 'light' ? false
+                  : !document.documentElement.classList.contains('dark'));
+          });
+        })();
+    </script>
+  </head>
+  <body>
+    {@inner_content}
+    <div id="toaster" class="toaster"></div>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "basecoat-css": "^0.3.1",
+    "gsap": "^3.13.0",
+    "remixicon": "^4.6.0"
+  }
+}
