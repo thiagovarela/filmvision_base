@@ -1,17 +1,22 @@
-# Filmvision
+# Film Vision - base structure
 
-This is a Phoenix application that serves as a base for some apps.
+This is a [Phoenix application](https://www.phoenixframework.org/) that serves as a base for some apps.
 
-The name is filmvision because I started a project with this name and decided to leave the base here, and it is quite annoying to have some generators/ignite/cookiecutter for it, so I'll leve as sample code.
+The name is filmvision because I started a project with this name and decided to leave the base here, and it is quite annoying to have some generators/ignite/cookiecutter for it, so I'll leave as sample code.
 
 What we have is a bare phoenix application with some extras:
 I used the `phx.gen.auth` generator and added organizations and projects as part of the scope.
 
-Also replaced daisyui with basecoat and built some layouts:
+Also replaced daisyui with [basecoat](https://basecoatui.com/) and built some layouts:
+
 
 - site: marketing site
 - auth: for authentication views
 - app: a sidebar/offcanvas for the authed user.
+
+![app-layout](app-layout.png)
+
+Icons from [remixicon](https://remixicon.com/).
 
 ## Next steps
 - configure google log in
